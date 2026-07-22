@@ -1,0 +1,28 @@
+#entendendo a estrutura pilha
+
+pilha=[]
+acao=input('Digite PARE para parar o programa \nDigite 1 para inserir elementos \nDigite 2 para excluir elementos \nDigite 3 para mostrar a pilha \n')
+while acao!= 'PARE':
+    if acao == '1':
+
+        acao2=input('Digite o elemento a ser inserido\n')
+        pilha.append(acao2)
+
+    elif acao == '2':
+
+        if len(pilha)==0:
+            print('Lista vazia, nao é possivel excluir elementos')
+        
+        else:
+            pilha.pop()
+
+    elif acao == '3':
+
+        print(pilha)
+
+    else:
+
+        print('digite uma ação possivel')
+
+    print()
+    acao=input('Digite PARE para parar o programa \nDigite 1 para inserir elementos \nDigite 2 para excluir elementos \nDigite 3 para mostrar a pilha \n')
