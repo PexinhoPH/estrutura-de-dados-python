@@ -1,0 +1,99 @@
+#declaração de classe
+class Pilha:
+    def __init__(self, capacidade):#metodo construtor - instanciando um objeto
+        self.elementos = []
+        self.topo = -1
+        self.tamanho = 0
+        self.capacidade = capacidade
+
+#metodos de instacia
+
+    def mostrar(self):
+
+        print(self.elementos)
+
+    def inserir(self,coisa):
+
+        if self.tamanho >= self.capacidade:
+
+            if self.tamanho > self.capacidade:
+
+                print("pilha super lotada esvazie a pilha urgente")
+
+            else:
+
+                print('pilha está cheia')
+
+        else:
+
+            self.elementos.append(coisa)
+            self.tamanho += 1
+            self.topo += 1
+    
+    def retirar(self):
+        
+        if self.tamanho == 0:
+
+            print('pilha esta vazia nao é possivel retirar elementos')
+
+        else:
+
+            self.elementos.pop()
+            self.tamanho -= 1
+            self.topo -= 1
+        
+    def peek(self):
+
+        if self.is_empty():
+            return None
+
+        return self.elementos[self.topo]
+
+    def qtd(self):
+
+        print(self.tamanho)
+
+    def is_full(self):
+
+        if self.tamanho >= self.capacidade:
+
+            return True
+        
+        else:
+
+            return False
+    def is_empty(self):
+
+        if self.tamanho == 0:
+
+            return True
+
+        else:
+
+            return False
+        
+n= int(input('qual o tamanho da sua pilha? \n'))
+pilha = Pilha(n)
+
+while True:
+    x=input('Deseja ver sua pilha digite 1 \nDeseja ver o topo da sua pilha digite 2 \nDeseja ver o tamanho da sua pilha digite 3 \nDeseja inserir um elemento na sua pilha digite 4 \nDeseja remover um elemento da sua pilha digite 5 \n')
+    if x == '1':
+
+        pilha.mostrar()
+
+    elif x == '2':
+
+        print(pilha.peek())
+
+    elif x == '3':
+
+        pilha.qtd()
+
+    elif x == '4':
+        
+        y=input('qual elemento voce quer inserir?\n')
+        pilha.inserir(y)
+
+    elif x == '5':
+
+        pilha.retirar()
